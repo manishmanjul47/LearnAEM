@@ -1,0 +1,10 @@
+<sly data-sly-use.articleListModel="com.mysite.core.models.ArticleList"/>
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${templates.placeholder @ isEmpty = !articleListModel.articleListRootPath}"></sly>
+<p>${articleListModel.articleListRootPath}</p>
+<sly data-sly-list.articleList="${articleListModel.articleListDataBeansArray}">
+    <p>${articleList.path}</p>
+    <p>${articleList.title}</p>
+    <p>${articleList.description}</p>
+    <p>${articleList.imagePath}</p>
+</sly>
